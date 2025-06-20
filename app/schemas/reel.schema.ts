@@ -1,14 +1,13 @@
-// app/schemas/reel.schema.ts
 import { z } from 'zod';
 
 // Zod schema for a single reel object
 export const reelSchema = z.object({
-  id: z.number().int().positive(), // Assuming IDs are positive integers
+  id: z.number().int().positive(),
   video_url: z.string().url(),
   thumbnail_url: z.string().url(),
-  description: z.string().nullable(), // Nullable as per backend
-  views: z.number().int().min(0), // Assuming views are non-negative integers
-  created_at: z.string().datetime(), // Assuming ISO 8601 string dates
+  description: z.string().nullable(),
+  views: z.number().int().min(0),
+  created_at: z.string().datetime(),
 });
 
 // Zod schema for an array of reels
